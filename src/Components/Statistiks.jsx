@@ -1,14 +1,19 @@
-import { Component } from "react";
+import { Component } from 'react';
 
 class Statistics extends Component {
   render() {
-    return(         
-        <div>
-          {this.props.options.map(btn => {
-            return <button key={btn} onClick={() => this.props.onLeaveFeedback(btn)} type='button'>{btn}</button>
-          })}
-        </div>
-  )}
+    const { good, neutral, bad, total, positivePercentage } = this.props;
+
+    return (
+      <div>
+        <p>Good: {good}</p>
+        <p>Neutral: {neutral}</p>
+        <p>Bad: {bad}</p>
+        <p>Total: {total}</p>
+        <p>Positive feedback: {positivePercentage}%</p>
+      </div>
+    );
+  }
 }
 
-export default Statistics
+export default Statistics;
